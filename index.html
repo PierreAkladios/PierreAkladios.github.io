@@ -1,1 +1,56 @@
-"Hello World" 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Questionnaire SEG3525 Module 1</title>
+  </head>
+  <body>
+    <h1>Questionnaire</h1>
+    <h2>Lien du siteweb de <a href="https://www.metro.ca/">Metro</a></h2>
+    
+    <a href="https://www.metro.ca/"><img alt="Metro.ca homepage" src="Images/metro.PNG" width="641" height="312"></a>
+    <form id="formMetro" action="index.php">
+        <div class="question">
+            <h2> Information Personnel </h2>
+            <p>Nom Complet: <input type="text" name="firstname"></p>
+        </div>
+        <div class="question">
+            <h2> À propos du site </h2>
+            <p>Quel est votre élément préféré du site?</p>
+            <input type="radio" id="Couleurs" name="radio" value="Couleurs">
+            <label for="male">Couleurs</label><br>
+            <input type="radio" id="Police" name="radio" value="Police">
+            <label for="female">Police</label><br>
+            <input type="radio" id="Images" name="radio" value="Images">
+            <label for="other">Images</label>
+            <br>  
+            <p>Avez vous déjà visité se siteweb?</p>           
+            <select name="Liste" id="listeOuiNon">
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+                <option value="Incertain(e)">Incertain(e)</option>
+            </select>
+            <br>
+            <p>Quel type de produits aimez vous?</p>
+            <input type="checkbox" name="produit" value="Viande">Viande<br>
+		    <input type="checkbox" name="produit" value="Laitiers">Produits Laitiers<br>
+		    <input type="checkbox" name="produit" value="Fruit">Fruits et légumes<br>
+            <input type="checkbox" name="produit" value="Céréales">Céréales<br>
+		    <input type="checkbox" name="produit" value="Boissons">Boissons<br>
+		    <input type="checkbox" name="produit" value="Sucreries">Sucreries<br>
+            <br>
+        </div>
+        Commentaires:<br>
+	        <textarea rows="5" cols="30"></textarea>
+            <br>
+            <br>
+        <button id="submitButton" type="button" class="block">
+            Soumettre
+        </button>	    
+    </form> 
+  </body>
+  <footer>
+    <p id="signature">Site created by Pierre Akladios</p>	
+  </footer>
+  </html> 
