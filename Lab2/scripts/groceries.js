@@ -5,40 +5,107 @@
 var products = [
 {
   name: "brocoli",
-  vegetarian: true,
-  glutenFree: true,
+  lactose: true,
+  nuts: true,
+  organic: true,
   price: 1.99
 },
 {
   name: "bread",
-  vegetarian: true,
-  glutenFree: false,
+  lactose: true,
+  nuts: true,
+  organic: true,
   price: 2.35
 },
 {
+  name: "milk",
+  lactose: false,
+  nuts: true,
+  organic: true,
+  price: 2.99
+},
+{
+  name: "peanut butter",
+  lactose: true,
+  nuts: false,
+  organic: false,
+  price: 3.56
+},
+{
+  name: "trailmix snackpac",
+  lactose: true,
+  nuts: false,
+  organic: false,
+  price: 3.59
+},
+{
+  name: "yogourt",
+  lactose: false,
+  nuts: true,
+  organic: false,
+  price: 5.64
+},
+{
+  name: "groundbeef",
+  lactose: true,
+  nuts: true,
+  organic: false,
+  price: 8.97
+},
+{
   name: "salmon",
-  vegetarian: false,
-  glutenFree: true,
+  lactose: true,
+  nuts: true,
+  organic: true,
   price: 10.00
-}
+},
+{
+  name: "pizza",
+  lactose: false,
+  nuts: true,
+  organic: false,
+  price: 11.00
+},
+{
+  name: "cheese",
+  lactose: false,
+  nuts: true,
+  organic: true,
+  price: 12.00
+},
 ];
 
-
+var organicc = false;
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
 function restrictListProducts(prods, restriction) {
 let product_names = [];
+var priceStr =" - ";
 for (let i=0; i<prods.length; i+=1) {
-  if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-    product_names.push(prods[i].name);
+  if ((restriction == "Lactose") && (prods[i].lactose == true)){
+    priceStr = priceStr.concat(prods[i].price.toString());
+    priceStr = priceStr.concat(" $");
+    if(organicc == true){
+      if(prods[i].organic == true){
+        priceStr = priceStr.concat("organic");
+      }
+    }
+    product_names.push(prods[i].name.concat(priceStr));
+    priceStr = " - ";
   }
-  else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-    product_names.push(prods[i].name);
+  else if ((restriction == "Nuts") && (prods[i].nuts == true)){
+    priceStr = priceStr.concat(prods[i].price.toString());
+    priceStr = priceStr.concat(" $");
+    product_names.push(prods[i].name.concat(priceStr));
+    priceStr = " - ";
   }
   else if (restriction == "None"){
-    product_names.push(prods[i].name);
+    priceStr = priceStr.concat(prods[i].price.toString());
+    priceStr = priceStr.concat(" $");
+    product_names.push(prods[i].name.concat(priceStr));
+    priceStr = " - ";
   }
 }
 return product_names;
@@ -53,4 +120,15 @@ for (let i=0; i<products.length; i+=1) {
   }
 }
 return totalPrice;
+}
+//inspired by https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp
+function organicCheck(){
+  // Get the checkbox
+  var checkBox = document.getElementById("organic");
+  if (checkBox.checked == true){
+    organicc = true;
+  }
+  else{
+    organicc = false;
+  }
 }

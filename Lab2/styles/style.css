@@ -35,3 +35,22 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+
+h1{
+  background-color: grey;
+}
+
+#addCart{
+  padding: 14px 16px;
+  margin-top: 15PX;
+}
+
+body{
+  background-color: antiquewhite;
+}
+
+#signature {
+  text-align: right;
+  font-style: italic;
+  font-size: 75%;
+}
