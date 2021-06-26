@@ -10,8 +10,11 @@ function validatePhone(txtPhone) {
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
     var filter = /^(\([-+]?[0-9]+)\)$/;
+    var phoneno = /^\d{10}$/;
     if (filter.test(a)) {
-        return true;
+        if (phoneno.test(a)){
+            return true;
+        }
     }
     else {
         return false;
@@ -23,8 +26,20 @@ function validatePhone(txtPhone) {
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
-const setDateFormat = "mm/dd/yy";
+function unavailable(){
+    if(document.getElementById(r1).checked){
+        var unavailableDates = ["06/29/2021","07/07/2021","07/10/2021"];
+        const setDateFormat = "mm/dd/yy";
+    }
+    else if (document.getElementById(r2).checked) {
+        var unavailableDates = ["06/25/2021","07/01/2021","07/15/2021"];
+        const setDateFormat = "mm/dd/yy";
+    } else if (document.getElementById(r3).checked){
+        var unavailableDates = ["05/25/2021","01/01/2021","10/15/2021"];
+        const setDateFormat = "mm/dd/yy";
+    }
+}
+
 
 function disableDates(date) {
     // Sunday is Day 0, disable all Sundays
@@ -45,7 +60,7 @@ $(document).ready(function(){
     $("#phone").on("change", function(){
         if (!validatePhone("phone")){
             alert("Wrong format for phone");
-            $("#phone").val("(xxxx)");
+            $("#phone").val("(xxxxxxxxxx)");
             $("#phone").addClass("error");
         }
         else {
