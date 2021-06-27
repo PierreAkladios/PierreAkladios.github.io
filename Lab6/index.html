@@ -39,10 +39,23 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     https://getbootstrap.com/docs/5.0/components/navbar/
     -->
 
-    <nav class="navbar bg-dark text-white p-3 my-3 ">
-        <h1><img src="images/company_logo.png" width="130" height="130"> Welcome to Physiotherapy inc.</h1>
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#service"><img src="images/icons8-medical-bag-48.png" alt="logo" style="width:30px;">Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#doctor"><img src="images/icons8-medical-doctor-50.png" alt="logo" style="width:30px;">Meet the Physicians</a>
+            </li>
+        </ul>
+    </div>   
     </nav>
-
+    <h1><img src="images/company_logo.png" width="130" height="130"> Welcome to Physiotherapy inc.</h1>
     <div class=" p-3 my-3 border bg-light">
         <h1 class=""><img src="images/icons8-about-48.png"> About us</h1>
         <p class="p-4 my-3" style="font-size: 25px">We are located in Ottawa Ontario on K1K 2K2, 123 example street.</p>
@@ -53,7 +66,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     It is a good way to list of prices, or services in a business website
     https://getbootstrap.com/docs/5.0/content/tables/
     -->
-    <table class="table table-info table-hover">
+    <table id="service" class="table table-info table-hover">
         <thead>
             <tr>
                 <th scope="col"><h2><img src="images/icons8-medical-bag-48.png">Service</h2></th>
@@ -114,7 +127,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </div>
             <div class="modal-body">
                 <p>Date: <input type="text" id="dateInput"></p>
-                <p>Phone Number Example <input value="(1234)" type="text" id="phone"></p>
+                <p>Phone Number Example <input type="text" id="phone"></p>
                 <p><img src="images/icons8-money-48.png">Credit Card: <input type="text" id="debit" title="We ask for your credit card number in case of no-show, 20$ will be charged."></p>
 
             </div>
@@ -187,7 +200,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     -->
 
     <h1><img src="images/icons8-medical-doctor-50.png">Meet the Physicians!</h1>
-    <div class="row justify-content-around">
+    <div id="doctor" class="row justify-content-around">
         <div class="card" style="width: 18rem;">
             <img src="images/doctor.jpg" class="card-img-top" alt="...">
             <div class="card-body">
